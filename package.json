@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -w",
+    "ugly": "uglifyjs -cm -o build/math.min.js --ecma 8 --rename --source-map --toplevel --warn build/math.js"
+  },
+  "author": "Saeed M Rad",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "typescript": "4.2.0-dev.20210113",
+    "uglify-es": "^3.3.9"
+  }
+}
