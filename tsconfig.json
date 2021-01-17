@@ -9,6 +9,7 @@
     "sourceMap": true,
     "outDir": "./build",
     "tsBuildInfoFile": "./build/.json",
+    "rootDir": "./src",
 
     /* Strict Type-Checking Options */
     "strict": true,
