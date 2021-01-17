@@ -2,13 +2,13 @@ import { Box, compileGroup, Group, Unit } from '../defs';
 
 export default class Stack implements Unit {
 	constructor (
-		readonly sup: Group,
-		readonly sub: Group,
+		readonly superscript: Group,
+		readonly subscript: Group,
 	) {}
 
 	compile (hsp = 1, dsp = 0): Box {
-		const sup = compileGroup(this.sup);
-		const sub = compileGroup(this.sub);
+		const sup = compileGroup(this.superscript);
+		const sub = compileGroup(this.subscript);
 
 		return {
 			render: (canvas, x, y) => {
