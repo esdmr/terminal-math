@@ -4,7 +4,7 @@ export default class Fraction implements Unit {
 	constructor (
 		readonly numerator: Group,
 		readonly denominator: Group,
-	) {}
+	) { }
 
 	compile (): Box {
 		const num = compileGroup(this.numerator);

@@ -2,8 +2,8 @@ import { Box, compileGroup, Group, Unit } from '../defs';
 
 export default class Root implements Unit {
 	constructor (
-		readonly degree: Group,
 		readonly radicant: Group,
+		readonly degree: Group = [],
 	) { }
 
 	compile (): Box {

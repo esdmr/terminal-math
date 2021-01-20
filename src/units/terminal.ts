@@ -1,4 +1,6 @@
-import { Box, OT, Unit } from '../defs';
+import { Box, Unit } from '../defs';
+
+export const enum OT { text, unary = 2, binary, fname }
 
 export default class Terminal implements Unit {
 	private readonly margin: number;
@@ -26,6 +28,6 @@ export default class Terminal implements Unit {
 			depth: 0,
 			marginLeft: this.margin,
 			marginRight: this.margin,
-		}
+		};
 	}
 }

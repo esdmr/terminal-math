@@ -1,19 +1,11 @@
+import { zip2 } from './helper';
+
 export const enum Sy {
 	pi = 'π',
 	sum = 'Σ',
 }
 
-export const enum DD { left, right }
-export const enum DT { round, square, curly, floor, ceil, vert, dbvert, hidden }
-export const enum OT { text, unary = 2, binary, fname }
 export const enum ST { rm, sf, sc, fr, tt, bb }
-
-export interface ImageData {
-	readonly draw: (x: number, y: number, value: string) => void;
-	readonly data: string[];
-	readonly width: number;
-	readonly height: number;
-}
 
 export interface Box {
 	readonly render: (canvas: ImageData, x: number, y: number) => void;
@@ -51,7 +43,7 @@ export function compileGroup (group: Group): Box {
 		render: (canvas, x, y) => {
 			for (const [box, margin] of zip2(boxes.values(), margins.values())) {
 				box.render(canvas, x, y);
-				x += box.width +margin;
+				x += box.width + margin;
 			}
 		},
 		width,
@@ -59,5 +51,25 @@ export function compileGroup (group: Group): Box {
 		depth,
 		marginLeft: boxes[0]!.marginLeft,
 		marginRight: boxes[len - 1]!.marginRight,
+	};
+}
+
+export class ImageData {
+	readonly data: string[];
+
+	constructor (
+		readonly width: number,
+		readonly height: number,
+		depth: number,
+	) {
+		this.data = new Array(width * (height + depth)).fill(' ');
+	}
+
+	draw (x: number, y: number, value: string) {
+		this.data[x + y * this.width] = value;
+	}
+
+	render (box: Box) {
+		box.render(this, 0, this.height - 1);
 	}
 }

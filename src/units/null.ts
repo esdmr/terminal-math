@@ -3,7 +3,7 @@ import { Box, Unit } from '../defs';
 export default class NullBox implements Unit {
 	compile (): Box {
 		return {
-			render: () => {},
+			render: () => { },
 			width: 0,
 			height: 0,
 			depth: 0,
