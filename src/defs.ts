@@ -1,4 +1,5 @@
 import { zip2 } from './helper';
+import NullBox from './units/null';
 
 export const enum Sy {
 	pi = 'π',
@@ -24,7 +25,8 @@ export type Group = readonly Unit[];
 
 export function compileGroup (group: Group): Box {
 	const len = group.length;
-	if (len === 1) return group[0]!.compile();
+	if (len === 0) return new NullBox().compile();
+	else if (len === 1) return group[0]!.compile();
 	const boxes = group.map((unit) => unit.compile());
 
 	const margins = boxes.map((box, i) => i >= len - 1 ? 0 : Math.max(box.marginRight, boxes[i + 1]!.marginLeft));

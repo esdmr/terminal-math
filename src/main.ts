@@ -4,6 +4,7 @@ import Fraction from './units/fraction';
 import Limit from './units/limit';
 import Root from './units/root';
 import Stack from './units/stack';
+import Symbol from './units/symbol';
 import Terminal, { OT } from './units/terminal';
 
 const box = compileGroup([
@@ -36,7 +37,7 @@ const box = compileGroup([
 		], [new Terminal('4')]),
 	]),
 	new Terminal('+', OT.binary),
-	new Limit(true, new Terminal(Sy.sum), new Stack([], [new Terminal('n')], [
+	new Limit(true, new Symbol(Sy.sum), new Stack([], [new Terminal('n')], [
 		new Terminal('i'),
 		new Terminal('=', OT.binary),
 		new Terminal('1'),

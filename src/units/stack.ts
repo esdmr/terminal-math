@@ -11,8 +11,8 @@ export default class Stack implements Unit {
 		const val = compileGroup(this.value);
 		const sup = compileGroup(this.superscript);
 		const sub = compileGroup(this.subscript);
-		const hsp = Math.max(val.height, 1);
-		const dsp = Math.max(val.depth, 0);
+		const hsp = Math.max(val.height - 1, 1);
+		const dsp = Math.max(val.depth - 1, 0);
 
 		return {
 			render: (canvas, x, y) => {

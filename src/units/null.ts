@@ -1,4 +1,4 @@
-import { Box, Unit } from '../defs';
+import type { Box, Unit } from '../defs';
 
 export default class NullBox implements Unit {
 	compile (): Box {

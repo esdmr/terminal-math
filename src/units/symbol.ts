@@ -20,8 +20,6 @@ const symbols: { readonly [x in Sy]?: Box } = {
 	}),
 } as const;
 
-
-
 export default class Symbol implements Unit {
 	constructor (
 		readonly char: Sy,

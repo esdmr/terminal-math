@@ -1,11 +1,12 @@
 import { Box, compileGroup, Unit } from '../defs';
 import Stack from './stack';
+import Symbol from './symbol';
 import Terminal from './terminal';
 
 export default class Limit implements Unit {
 	constructor (
 		readonly limits: boolean,
-		readonly value: Terminal,
+		readonly value: Terminal | Symbol,
 		readonly stack: Stack,
 	) { }
 
