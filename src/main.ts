@@ -44,7 +44,7 @@ const box = compileGroup([
 	])),
 	new Terminal('i'),
 	new Terminal('+', OT.binary),
-	new Delimiter(DT.floor, [new Terminal('n')]),
+	new Delimiter(DT.ceil, [new Terminal('n')]),
 ]);
 
 const imgData = new ImageData(box.width, box.height, box.depth);
