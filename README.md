@@ -17,6 +17,8 @@ git clone https://github.com/esdmr/terminal-math.git
 cd terminal-math
 npm install
 npm run tsc
+node build/generate-unicode-db.js
+# Optionally
 npm run ugly
 ```
 
