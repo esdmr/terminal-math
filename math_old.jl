@@ -1,5 +1,5 @@
 #
-# Why the fuck is the julia version x10 slower
+# Why is the julia version x10 slower
 # than the javascript version?!
 #
 
